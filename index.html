@@ -265,61 +265,512 @@
 </section>
    </div><!-- SERVICES PAGE -->
    <div id="page-services" class="page hidden">
-    <section class="pt-28 pb-20 min-h-screen bg-gradient-to-b from-black to-gray-900">
-     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="font-bebas text-5xl md:text-7xl text-center mb-4">Our <span class="text-gradient">Services</span></h1>
-      <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">Professional towing and roadside assistance for any situation</p>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Towing -->
-       <div class="bg-white/5 border border-white/10 rounded-3xl p-8 card-hover">
-        <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center mb-6"><img src="https://i.ibb.co/zLDgRPX/IMG-3999-Photoroom.png" alt="Towing Service" class="w-12 h-12 object-contain" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-3xl\'>🚛</span>';">
+ 
+    <!-- ══════════════════════════════════════════
+         SERVICES  —  FULL-VIEWPORT CINEMATIC SLIDER
+    ══════════════════════════════════════════ -->
+    <style>
+      /* ── Outer shell: fills everything below the fixed nav ── */
+      #svc-shell {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 80px);
+        margin-top: 80px;
+        overflow: hidden;
+        background: #000;
+        user-select: none;
+      }
+ 
+      /* ── Track: all slides in a row, shifted by CSS var ── */
+      #svc-track {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        /* Custom easing: quick acceleration, elastic deceleration */
+        transition: transform 0.55s cubic-bezier(0.86, 0, 0.07, 1);
+        will-change: transform;
+      }
+      /* Disable transition during live drag */
+      #svc-track.dragging { transition: none !important; }
+ 
+      /* ── Individual slide ── */
+      .svc-slide {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 5rem;        /* side padding clears the arrows */
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+      }
+      @media (max-width: 640px) {
+        .svc-slide { padding: 2rem 1.5rem 5rem; }
+      }
+ 
+      /* ── Subtle per-slide bg gradient ── */
+      .svc-slide::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(30,64,175,0.18) 0%, transparent 80%);
+        pointer-events: none;
+      }
+ 
+      /* ── CONTENT ANIMATION ──
+         Elements enter from below on the incoming slide.
+         Direction classes (.from-right / .from-left) are added
+         before the track moves, then removed once settled.        */
+      .svc-img-wrap,
+      .svc-name,
+      .svc-desc {
+        will-change: opacity, transform;
+      }
+ 
+      /* Resting state for non-active slides */
+      .svc-slide:not(.is-active) .svc-img-wrap,
+      .svc-slide:not(.is-active) .svc-name,
+      .svc-slide:not(.is-active) .svc-desc {
+        opacity: 0;
+        transform: translateY(36px) scale(0.97);
+        transition: none;
+      }
+ 
+      /* Active slide — elements rise in with stagger */
+      .svc-slide.is-active .svc-img-wrap {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        transition: opacity 0.45s cubic-bezier(0.22,1,0.36,1),
+                    transform 0.45s cubic-bezier(0.22,1,0.36,1);
+        transition-delay: 0.22s;
+      }
+      .svc-slide.is-active .svc-name {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        transition: opacity 0.4s cubic-bezier(0.22,1,0.36,1),
+                    transform 0.4s cubic-bezier(0.22,1,0.36,1);
+        transition-delay: 0.32s;
+      }
+      .svc-slide.is-active .svc-desc {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        transition: opacity 0.4s cubic-bezier(0.22,1,0.36,1),
+                    transform 0.4s cubic-bezier(0.22,1,0.36,1);
+        transition-delay: 0.40s;
+      }
+ 
+      /* ── Image wrapper ── */
+      .svc-img-wrap {
+        height: 38vh;
+        max-height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2.2rem;
+      }
+      .svc-img-wrap img,
+      .svc-img-wrap .svc-emoji {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 0 40px rgba(59,130,246,0.55));
+      }
+      .svc-emoji { font-size: clamp(5.5rem,16vw,8.5rem); line-height: 1; display: flex; align-items: center; }
+ 
+      /* ── Service name ── */
+      .svc-name {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: clamp(2.4rem,5.5vw,3.8rem);
+        letter-spacing: 0.06em;
+        text-align: center;
+        margin-bottom: 0.75rem;
+        line-height: 1;
+      }
+ 
+      /* ── Description ── */
+      .svc-desc {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(0.88rem,1.8vw,1.05rem);
+        color: #9ca3af;
+        line-height: 1.75;
+        text-align: center;
+        max-width: 520px;
+      }
+ 
+      /* ── Arrow buttons ── */
+      .svc-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        width: 50px; height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1e40af, #3b82f6);
+        border: none;
+        cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        color: #fff;
+        box-shadow: 0 0 0 0 rgba(59,130,246,0);
+        transition: box-shadow 0.25s, opacity 0.2s, transform 0.2s;
+      }
+      .svc-arrow:not(:disabled):hover {
+        box-shadow: 0 0 22px 6px rgba(59,130,246,0.5);
+        transform: translateY(-50%) scale(1.1);
+      }
+      .svc-arrow:active { transform: translateY(-50%) scale(0.95) !important; }
+      .svc-arrow:disabled { opacity: 0.15; cursor: default; }
+      #svc-prev { left: 18px; }
+      #svc-next { right: 18px; }
+      @media (max-width: 480px) {
+        #svc-prev { left: 10px; }
+        #svc-next { right: 10px; }
+        .svc-arrow { width: 38px; height: 38px; }
+      }
+ 
+      /* ── Dot strip ── */
+      #svc-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 9px;
+        z-index: 20;
+      }
+      .svc-dot {
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.2);
+        border: none; cursor: pointer; padding: 0;
+        transition: background 0.3s, transform 0.3s, width 0.3s;
+      }
+      .svc-dot.active {
+        background: #3b82f6;
+        width: 22px;
+        border-radius: 4px;
+        transform: none;
+      }
+ 
+      /* ── Counter ── */
+      #svc-counter {
+        position: absolute;
+        top: 16px; right: 20px;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.1em;
+        color: rgba(255,255,255,0.28);
+        z-index: 20;
+      }
+ 
+      /* ── Swipe hint (mobile) ── */
+      #svc-hint {
+        position: absolute;
+        bottom: 48px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'Inter', sans-serif;
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+        color: rgba(255,255,255,0.18);
+        white-space: nowrap;
+        pointer-events: none;
+        transition: opacity 0.6s;
+        z-index: 20;
+        text-transform: uppercase;
+      }
+      #svc-hint.gone { opacity: 0; }
+ 
+      /* ── Slide-edge peek: tiny sliver of next/prev visible ──
+         achieved by making the track wider than the viewport    */
+      /* (Not needed — full-bleed is cleaner for this design)   */
+ 
+    </style>
+ 
+    <div id="svc-shell">
+ 
+      <!-- Slide counter -->
+      <span id="svc-counter">1 / 8</span>
+ 
+      <!-- ══ TRACK ══ -->
+      <div id="svc-track">
+ 
+        <!-- Slide 1: Towing -->
+        <div class="svc-slide is-active">
+          <div class="svc-img-wrap">
+            <img src="https://i.ibb.co/mrYnCfmJ/Untitled-design-2-Photoroom.png" alt="Towing Service" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'svc-emoji\'>🛻</span>';">
+          </div>
+          <h2 class="svc-name">Towing Services</h2>
+          <p class="svc-desc">Professional vehicle towing for cars, trucks, Motorcycles and RVs. Safe and secure transport to your destination or preferred repair facility.</p>
         </div>
-        <h3 class="font-bebas text-2xl mb-3">Towing Services</h3>
-        <p class="text-gray-400">Professional vehicle towing for cars, trucks, and SUVs. Safe and secure transport to your destination or preferred repair facility.</p>
-       </div><!-- Impounds -->
-       <div class="bg-white/5 border border-white/10 rounded-3xl p-8 card-hover">
-        <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center mb-6"><span class="text-3xl">🅿️</span>
+ 
+<!-- Slide 2: Luxury Car Towing -->
+        <div class="svc-slide">
+          <div class="svc-img-wrap">
+            <img src="https://i.ibb.co/5hmvCS53/Untitled-design-8-Photoroom.png" alt="Luxury Towing" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'svc-emoji\'>🏎️</span>';">
+          </div>
+          <h2 class="svc-name">Luxury Towing</h2>
+          <p class="svc-desc">Premium flatbed paired with white-glove service, giving specialized care for high-end and classic vehicles.</p>
         </div>
-        <h3 class="font-bebas text-2xl mb-3">Impound Services</h3>
-        <p class="text-gray-400">Private property impound services for property managers, apartment complexes, and businesses. Fast response times guaranteed.</p>
-       </div><!-- Repossessions -->
-       <div class="bg-white/5 border border-white/10 rounded-3xl p-8 card-hover">
-        <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center mb-6"><span class="text-3xl">🔑</span>
+ 
+        <!-- Slide 3: Impounds -->
+        <div class="svc-slide">
+          <div class="svc-img-wrap">
+            <img src="https://i.ibb.co/cc7ymL9k/Untitled-design-6-Photoroom.png" alt="Impounds" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'svc-emoji\'>🅿️</span>';">
+          </div>
+          <h2 class="svc-name">Impound Services</h2>
+          <p class="svc-desc">Private property impound services for property managers, apartment complexes, and businesses. Fast response times guaranteed.</p>
         </div>
-        <h3 class="font-bebas text-2xl mb-3">Repossessions</h3>
-        <p class="text-gray-400">Professional and discreet vehicle repossession services for lenders and financial institutions. Licensed and insured.</p>
-       </div><!-- Flat Tire / Tire Change -->
-       <div class="bg-white/5 border border-white/10 rounded-3xl p-8 card-hover">
-        <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center mb-6"><img src="https://i.ibb.co/60Wj8krq/tire-image-icon-Photoroom.png" alt="Tire Service" class="w-12 h-12 object-contain" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-3xl\'>   </span>';">
+ 
+        <!-- Slide 4: Repossessions -->
+        <div class="svc-slide">
+          <div class="svc-img-wrap">
+            <img src="https://i.ibb.co/rRxFXMZ7/Untitled-design-1-Photoroom.png" alt="Reposessions" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'svc-emoji\'>🔑</span>';">
+          </div>
+          <h2 class="svc-name">Repossessions</h2>
+          <p class="svc-desc">Professional and discreet vehicle repossession services for lenders and financial institutions. Licensed and insured.</p>
         </div>
-        <h3 class="font-bebas text-2xl mb-3">Tire Service</h3>
-        <p class="text-gray-400">Flat tire? No problem. We'll get you back on the road quickly with professional tire change services or transport to a tire shop.</p>
-       </div><!-- Winch Out / Recovery -->
-       <div class="bg-white/5 border border-white/10 rounded-3xl p-8 card-hover">
-        <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center mb-6"><img src="https://i.ibb.co/xSrDPs34/IMG-4005-Photoroom.png" alt="Winch Out Service" class="w-12 h-12 object-contain" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-3xl\'>⛓️</span>';">
+ 
+        <!-- Slide 5: Tire Service -->
+        <div class="svc-slide">
+          <div class="svc-img-wrap">
+            <img src="https://i.ibb.co/nq3p3FVV/Untitled-design-Photoroom.png" alt="Tire Service" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'svc-emoji\'>🛞</span>';">
+          </div>
+          <h2 class="svc-name">Tire Service</h2>
+          <p class="svc-desc">Flat tire? No problem. We'll get you back on the road quickly with professional tire change services or transport to a tire shop.</p>
         </div>
-        <h3 class="font-bebas text-2xl mb-3">Winch Out / Recovery</h3>
-        <p class="text-gray-400">Stuck in mud, sand, or a ditch? Our winch-out services will safely extract your vehicle without causing additional damage.</p>
-       </div><!-- Lock Out -->
-       <div class="bg-white/5 border border-white/10 rounded-3xl p-8 card-hover">
-        <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center mb-6"><span class="text-3xl">🔐</span>
+ 
+        <!-- Slide 6: Winch Out -->
+        <div class="svc-slide">
+          <div class="svc-img-wrap">
+            <img src="https://i.ibb.co/tw4XRxC4/Untitled-design-3-Photoroom.png" alt="Winch Out" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'svc-emoji\'>⛓️</span>';">
+          </div>
+          <h2 class="svc-name">Winch Out / Recovery</h2>
+          <p class="svc-desc">Stuck in mud, sand, or a ditch? Our winch-out services will safely extract your vehicle without causing additional damage.</p>
         </div>
-        <h3 class="font-bebas text-2xl mb-3">Lock Out Service</h3>
-        <p class="text-gray-400">Locked out of your vehicle? Our technicians can safely unlock your car and get you back inside without damage.</p>
-       </div><!-- Jump Start -->
-       <div class="bg-white/5 border border-white/10 rounded-3xl p-8 card-hover">
-        <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center mb-6"><span class="text-3xl">🔋</span>
+ 
+        <!-- Slide 7: Lock Out -->
+        <div class="svc-slide">
+          <div class="svc-img-wrap">
+            <img src="https://i.ibb.co/rRDpfnGb/Gemini-Generated-Image-iactc9iactc9iact-Photoroom-1.png alt="Lock Out" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'svc-emoji\'>🔐</span>';">
+          </div>
+          <h2 class="svc-name">Lock Out Service</h2>
+          <p class="svc-desc">Locked out of your vehicle? Our technicians can safely unlock your car and get you back inside without damage.</p>
         </div>
-        <h3 class="font-bebas text-2xl mb-3">Jump Start</h3>
-        <p class="text-gray-400">Dead battery? We'll come to you and provide a professional jump start to get your vehicle running again.</p>
-       </div><!-- Fuel Delivery -->
-       <div class="bg-white/5 border border-white/10 rounded-3xl p-8 card-hover">
-        <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center mb-6"><span class="text-3xl">⛽</span>
+ 
+        <!-- Slide 8: Jump Start -->
+        <div class="svc-slide">
+          <div class="svc-img-wrap">
+            <img src="https://i.ibb.co/SwY9s7vJ/Untitled-design-5-Photoroom.png" alt="Jump Start" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'svc-emoji\'>🔋</span>';">
+          </div>
+          <h2 class="svc-name">Jump Start</h2>
+          <p class="svc-desc">Dead battery? We'll come to you and provide a professional jump start to get your vehicle running again.</p>
         </div>
-        <h3 class="font-bebas text-2xl mb-3">Fuel Delivery</h3>
-        <p class="text-gray-400">Ran out of gas? We'll deliver fuel directly to your location so you can get back on the road without hassle.</p>
-       </div>
+ 
+        <!-- Slide 9: Fuel Delivery -->
+        <div class="svc-slide">
+          <div class="svc-img-wrap">
+            <img src="https://i.ibb.co/dsDPQTdX/Untitled-design-4-Photoroom.png" alt="Fuel Delivery" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\'svc-emoji\'>⛽</span>';">
+          </div>
+          <h2 class="svc-name">Fuel Delivery</h2>
+          <p class="svc-desc">Ran out of gas? We'll deliver fuel directly to your location so you can get back on the road without hassle.</p>
+        </div>
+ 
+      </div><!-- /svc-track -->
+ 
+      <!-- Arrows -->
+      <button id="svc-prev" class="svc-arrow" aria-label="Previous service">
+        <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <button id="svc-next" class="svc-arrow" aria-label="Next service">
+        <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
+        </svg>
+      </button>
+ 
+      <!-- Dots -->
+      <div id="svc-dots">
+        <button class="svc-dot active" aria-label="Service 1"></button>
+        <button class="svc-dot" aria-label="Service 2"></button>
+        <button class="svc-dot" aria-label="Service 3"></button>
+        <button class="svc-dot" aria-label="Service 4"></button>
+        <button class="svc-dot" aria-label="Service 5"></button>
+        <button class="svc-dot" aria-label="Service 6"></button>
+        <button class="svc-dot" aria-label="Service 7"></button>
+        <button class="svc-dot" aria-label="Service 8"></button>
+        <button class="svc-dot" aria-label="Service 9"></button>
       </div>
-     </div>
+ 
+      <!-- Mobile swipe hint -->
+      <div id="svc-hint">← Swipe to explore →</div>
+ 
+    </div><!-- /svc-shell -->
+ 
+    <script>
+    (function () {
+      'use strict';
+ 
+      const TOTAL   = 8;
+      let current   = 0;
+      let locked    = false;   // prevents double-fire during transition
+ 
+      const shell   = document.getElementById('svc-shell');
+      const track   = document.getElementById('svc-track');
+      const slides  = Array.from(track.querySelectorAll('.svc-slide'));
+      const dots    = Array.from(document.querySelectorAll('#svc-dots .svc-dot'));
+      const counter = document.getElementById('svc-counter');
+      const prevBtn = document.getElementById('svc-prev');
+      const nextBtn = document.getElementById('svc-next');
+      const hint    = document.getElementById('svc-hint');
+ 
+      /* ── Core navigation ──────────────────────────────────── */
+      function goTo(next, instant) {
+        if (locked && !instant) return;
+        if (next === current && !instant) return;
+        if (next < 0 || next >= TOTAL) return;
+ 
+        locked = true;
+ 
+        // Deactivate current slide content (fade out immediately)
+        slides[current].classList.remove('is-active');
+ 
+        current = next;
+ 
+        // Move the track
+        if (instant) {
+          track.classList.add('dragging');           // no transition
+          track.style.transform = `translateX(-${current * 100}%)`;
+          track.offsetHeight;                        // force reflow
+          track.classList.remove('dragging');
+        } else {
+          track.style.transform = `translateX(-${current * 100}%)`;
+        }
+ 
+        // Activate new slide content after track settles
+        const SETTLE = instant ? 0 : 520;
+        setTimeout(function () {
+          slides[current].classList.add('is-active');
+          locked = false;
+        }, SETTLE);
+ 
+        // UI updates
+        dots.forEach(function (d, i) {
+          d.classList.toggle('active', i === current);
+        });
+        counter.textContent = (current + 1) + ' / ' + TOTAL;
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === TOTAL - 1;
+      }
+ 
+      /* ── Button clicks ── */
+      prevBtn.addEventListener('click', function () { goTo(current - 1); });
+      nextBtn.addEventListener('click', function () { goTo(current + 1); });
+      dots.forEach(function (d, i) { d.addEventListener('click', function () { goTo(i); }); });
+ 
+      /* ── Touch / pointer drag ──────────────────────────────── */
+      let dragStartX  = 0;
+      let dragStartY  = 0;
+      let dragCurrent = 0;
+      let isDragging  = false;
+      let axisLocked  = false;   // 'h' | 'v' | false
+ 
+      function onDragStart(x, y) {
+        dragStartX  = x;
+        dragStartY  = y;
+        dragCurrent = 0;
+        isDragging  = true;
+        axisLocked  = false;
+        track.classList.add('dragging');
+      }
+ 
+      function onDragMove(x) {
+        if (!isDragging) return;
+        dragCurrent = x - dragStartX;
+        // Live follow — slide along with finger
+        track.style.transform =
+          'translateX(calc(-' + (current * 100) + '% + ' + dragCurrent + 'px))';
+      }
+ 
+      function onDragEnd(x, y) {
+        if (!isDragging) return;
+        isDragging = false;
+        track.classList.remove('dragging');
+ 
+        const dx = x - dragStartX;
+        const dy = y - dragStartY;
+        const THRESHOLD = 60;
+ 
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > THRESHOLD) {
+          hint.classList.add('gone');
+          const dir = dx < 0 ? 1 : -1;
+          const dest = Math.max(0, Math.min(TOTAL - 1, current + dir));
+          if (dest !== current) {
+            // Snap forward — re-enable transition first
+            track.style.transition = 'transform 0.55s cubic-bezier(0.86,0,0.07,1)';
+            goTo(dest);
+          } else {
+            // Bounce back to current
+            track.style.transition = 'transform 0.35s cubic-bezier(0.86,0,0.07,1)';
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            locked = false;
+          }
+        } else {
+          // Cancel — snap back
+          track.style.transition = 'transform 0.35s cubic-bezier(0.86,0,0.07,1)';
+          track.style.transform = 'translateX(-' + (current * 100) + '%)';
+          locked = false;
+        }
+ 
+        // Restore normal transition after snap
+        setTimeout(function () {
+          track.style.transition = '';
+        }, 380);
+      }
+ 
+      // Touch events
+      shell.addEventListener('touchstart',  function (e) { onDragStart(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
+      shell.addEventListener('touchmove',   function (e) { onDragMove(e.touches[0].clientX); }, { passive: true });
+      shell.addEventListener('touchend',    function (e) { onDragEnd(e.changedTouches[0].clientX, e.changedTouches[0].clientY); });
+      shell.addEventListener('touchcancel', function (e) { onDragEnd(e.changedTouches[0].clientX, e.changedTouches[0].clientY); });
+ 
+      // Mouse drag (desktop)
+      shell.addEventListener('mousedown', function (e) { onDragStart(e.clientX, e.clientY); });
+      window.addEventListener('mousemove', function (e) { if (isDragging) onDragMove(e.clientX); });
+      window.addEventListener('mouseup',   function (e) { if (isDragging) onDragEnd(e.clientX, e.clientY); });
+ 
+      /* ── Keyboard ── */
+      document.addEventListener('keydown', function (e) {
+        if (document.getElementById('page-services').classList.contains('hidden')) return;
+        if (e.key === 'ArrowRight') goTo(current + 1);
+        if (e.key === 'ArrowLeft')  goTo(current - 1);
+      });
+ 
+      /* ── Reset when page is shown ── */
+      const _origShowPage = window.showPage;
+      window.showPage = function (name) {
+        _origShowPage(name);
+        if (name === 'services') {
+          goTo(0, true);
+        }
+      };
+ 
+      /* ── Init ── */
+      goTo(0, true);
+    })();
+    </script>
     </section>
    </div><!-- IMPOUNDS PAGE -->
    <div id="page-impounds" class="page hidden">
