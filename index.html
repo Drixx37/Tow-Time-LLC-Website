@@ -108,7 +108,7 @@
         <p class="text-xs text-blue-400">Austin, TX</p>
        </div>
       </div><!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-8"><button onclick="showPage('home')" class="nav-link text-white hover:text-blue-400 active" data-page="home">Home</button> <button onclick="showPage('services')" class="nav-link text-white hover:text-blue-400" data-page="services">Services</button> <button onclick="showPage('impounds')" class="nav-link text-white hover:text-blue-400" data-page="impounds">Impounds</button> <button onclick="showPage('gallery')" class="nav-link text-white hover:text-blue-400" data-page="gallery">Gallery</button> <button onclick="showPage('sponsors')" class="nav-link text-white hover:text-blue-400" data-page="sponsors">Sponsors</button> <button onclick="showPage('contact')" class="nav-link text-white hover:text-blue-400" data-page="contact">Contact</button>
+      <div class="hidden md:flex items-center gap-8"><button onclick="showPage('home')" class="nav-link text-white hover:text-blue-400 active" data-page="home">Home</button> <button onclick="showPage('services')" class="nav-link text-white hover:text-blue-400" data-page="services">Services</button> <button onclick="showPage('impounds')" class="nav-link text-white hover:text-blue-400" data-page="impounds">Impounds</button> <button onclick="showPage('gallery')" class="nav-link text-white hover:text-blue-400" data-page="gallery">Gallery</button> <button onclick="showPage('sponsors')" class="nav-link text-white hover:text-blue-400" data-page="sponsors">Sponsors</button> <button onclick="showPage('hiring')" class="nav-link text-white hover:text-blue-400" data-page="hiring">Hiring</button> <button onclick="showPage('contact')" class="nav-link text-white hover:text-blue-400" data-page="contact">Contact</button>
       </div><!-- CTA Button --> <a href="tel:5123648781" class="hidden md:flex items-center gap-2 gradient-blue px-5 py-2.5 rounded-full font-semibold hover:opacity-90 transition-opacity pulse-glow">
        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -121,18 +121,18 @@
        </svg></button>
      </div><!-- Mobile Menu -->
      <div id="mobile-menu" class="hidden md:hidden pb-4">
-      <div class="flex flex-col gap-4"><button onclick="showPage('home'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2 border-b border-white/10">Home</button> <button onclick="showPage('services'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2 border-b border-white/10">Services</button> <button onclick="showPage('impounds'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2 border-b border-white/10">Impounds</button> <button onclick="showPage('gallery'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2 border-b border-white/10">Gallery</button> <button onclick="showPage('sponsors'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2 border-b border-white/10">Sponsors</button> <button onclick="showPage('contact'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2">Contact</button> <a href="tel:5123648781" class="gradient-blue px-5 py-3 rounded-full font-semibold text-center mt-2"> 📞 (512) 364-8781 </a>
+      <div class="flex flex-col gap-4"><button onclick="showPage('home'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2 border-b border-white/10">Home</button> <button onclick="showPage('services'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2 border-b border-white/10">Services</button> <button onclick="showPage('impounds'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2 border-b border-white/10">Impounds</button> <button onclick="showPage('gallery'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2 border-b border-white/10">Gallery</button> <button onclick="showPage('sponsors'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2 border-b border-white/10">Sponsors</button> <button onclick="showPage('hiring'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2 border-b border-white/10">Hiring</button> <button onclick="showPage('contact'); toggleMobileMenu();" class="text-left text-white hover:text-blue-400 py-2">Contact</button> <a href="tel:5123648781" class="gradient-blue px-5 py-3 rounded-full font-semibold text-center mt-2"> 📞 (512) 364-8781 </a>
       </div>
      </div>
     </div>
    </nav><!-- HOME PAGE -->
    <div id="page-home" class="page"><!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center hero-bg pt-20">
+    <section class="relative flex items-center justify-center hero-bg" style="height:100dvh; min-height:100dvh;">
      <div class="absolute inset-0 overflow-hidden">
       <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
       <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
      </div>
-     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-8">
       <div class="-mb-14 float-animation"><img src="https://i.ibb.co/Swz3YTmJ/Tow-Time-LLC-Logo-Redesign-Transparent.png" alt="Tow Time LLC Logo" class="w-80 h-80 md:w-96 md:h-96 mx-auto object-contain" loading="lazy" onerror="this.src=''; this.alt='Logo'; this.style.display='none';">
       </div>
       <p id="hero-slogan" class="text-xl md:text-2xl text-gray-300 mb-8 italic">"Serving with Integrity, Leading with Honor."</p>
@@ -951,6 +951,722 @@
       </div>
      </div>
     </section>
+   </div><!-- HIRING PAGE -->
+   <div id="page-hiring" class="page hidden">
+    <style>
+      /* ── Hiring page styles ── */
+      .hire-section-header {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        color: #fff;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.12em;
+        padding: 10px 18px;
+        border-radius: 8px 8px 0 0;
+        margin-top: 28px;
+        margin-bottom: 0;
+      }
+      .hire-section-body {
+        border: 1px solid rgba(255,255,255,0.12);
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        padding: 20px 18px 12px;
+        background: rgba(255,255,255,0.03);
+        margin-bottom: 4px;
+      }
+      .hire-input {
+        width: 100%;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 10px;
+        padding: 10px 14px;
+        color: #fff;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
+        transition: border-color 0.2s;
+        outline: none;
+      }
+      .hire-input:focus { border-color: #3b82f6; }
+      .hire-input::placeholder { color: rgba(255,255,255,0.3); }
+      .hire-label {
+        display: block;
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.5);
+        margin-bottom: 5px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .hire-checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+        color: rgba(255,255,255,0.8);
+        cursor: pointer;
+        padding: 4px 0;
+      }
+      .hire-checkbox-label input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 18px; height: 18px;
+        border: 2px solid #60a5fa;
+        border-radius: 4px;
+        background: transparent;
+        cursor: pointer;
+        flex-shrink: 0;
+        position: relative;
+        transition: background 0.15s, border-color 0.15s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hire-checkbox-label input[type="checkbox"]:checked {
+        background: transparent;
+        border-color: #60a5fa;
+      }
+      .hire-checkbox-label input[type="checkbox"]:checked::after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 9px;
+        border: 2px solid #60a5fa;
+        border-top: none;
+        border-left: none;
+        transform: rotate(45deg) translate(-1px, -1px);
+        position: absolute;
+      }
+      .hire-field-group { margin-bottom: 14px; }
+      .hire-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .hire-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+      @media(max-width: 640px) {
+        .hire-grid-2, .hire-grid-3 { grid-template-columns: 1fr; }
+      }
+      .hire-truck-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 10px; align-items: end; }
+      @media(max-width: 640px) { .hire-truck-row { grid-template-columns: 1fr; } }
+      /* Signature canvas */
+      #sig-canvas {
+        width: 100%;
+        height: 160px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 10px;
+        cursor: crosshair;
+        touch-action: none;
+        display: block;
+      }
+      #sig-canvas.signed { border-color: #3b82f6; }
+      .sig-toolbar { display: flex; gap: 8px; margin-top: 8px; }
+      .sig-btn {
+        font-size: 0.75rem;
+        padding: 5px 14px;
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0.07);
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .sig-btn:hover { background: rgba(255,255,255,0.15); }
+      /* File upload area */
+      .hire-file-area {
+        border: 2px dashed rgba(59,130,246,0.4);
+        border-radius: 12px;
+        padding: 28px 18px;
+        text-align: center;
+        cursor: pointer;
+        transition: border-color 0.2s, background 0.2s;
+        position: relative;
+      }
+      .hire-file-area:hover { border-color: #3b82f6; background: rgba(59,130,246,0.05); }
+      .hire-file-area input[type="file"] {
+        position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+      }
+      .hire-submit-btn {
+        width: 100%;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        color: #fff;
+        border: none;
+        border-radius: 14px;
+        padding: 16px;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.3rem;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        transition: opacity 0.2s, transform 0.2s;
+        margin-top: 10px;
+      }
+      .hire-submit-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+      .hire-days-row { display: flex; flex-wrap: wrap; gap: 6px; }
+      .hire-day-label {
+        display: flex; align-items: center; gap: 5px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 8px;
+        padding: 5px 10px;
+        font-size: 0.82rem;
+        color: rgba(255,255,255,0.75);
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s;
+      }
+      .hire-day-label:has(input:checked) {
+        background: rgba(59,130,246,0.18);
+        border-color: #3b82f6;
+        color: #fff;
+      }
+      .hire-day-label input { accent-color: #3b82f6; }
+      select.hire-input { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='rgba(255,255,255,0.4)' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
+      select.hire-input option { background: #111827; color: #fff; }
+    </style>
+
+    <section class="pt-28 pb-20 min-h-screen bg-gradient-to-b from-black to-gray-900">
+     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="font-bebas text-5xl md:text-7xl mb-4">Join Our <span class="text-gradient">Team</span></h1>
+        <p class="text-gray-400 max-w-xl mx-auto">Fill out the application below and we'll be in touch. Fields marked <span class="text-blue-400">*</span> are required.</p>
+      </div>
+
+      <!-- Application Form -->
+      <form id="hiring-form" method="POST" action="https://formspree.io/f/xaqlqngo" enctype="multipart/form-data">
+
+        <!-- Hidden field: signature data -->
+        <input type="hidden" name="signature_data" id="sig-data-input">
+
+        <!-- ══ PERSONAL INFORMATION ══ -->
+        <div class="hire-section-header">Personal Information</div>
+        <div class="hire-section-body">
+          <div class="hire-grid-2">
+            <div class="hire-field-group">
+              <label class="hire-label">Full Name <span class="text-blue-400">*</span></label>
+              <input type="text" name="full_name" required class="hire-input" placeholder="John Doe">
+            </div>
+            <div class="hire-field-group">
+              <label class="hire-label">Date of Birth <span class="text-blue-400">*</span></label>
+              <input type="date" name="date_of_birth" required class="hire-input">
+            </div>
+          </div>
+          <div class="hire-field-group">
+            <label class="hire-label">Home Address <span class="text-blue-400">*</span></label>
+            <input type="text" name="address" required class="hire-input" placeholder="123 Main St">
+          </div>
+          <div class="hire-field-group">
+            <label class="hire-label">Secondary / Mailing Address</label>
+            <input type="text" name="secondary_address" class="hire-input" placeholder="P.O. Box or alternate address">
+          </div>
+          <div class="hire-grid-3">
+            <div class="hire-field-group">
+              <label class="hire-label">City <span class="text-blue-400">*</span></label>
+              <input type="text" name="city" required class="hire-input" placeholder="Austin">
+            </div>
+            <div class="hire-field-group">
+              <label class="hire-label">State <span class="text-blue-400">*</span></label>
+              <input type="text" name="state" required class="hire-input" placeholder="TX">
+            </div>
+            <div class="hire-field-group">
+              <label class="hire-label">Zip Code <span class="text-blue-400">*</span></label>
+              <input type="text" name="zip_code" required class="hire-input" placeholder="78701">
+            </div>
+          </div>
+          <div class="hire-grid-2">
+            <div class="hire-field-group">
+              <label class="hire-label">Phone Number <span class="text-blue-400">*</span></label>
+              <input type="tel" name="phone" required class="hire-input" placeholder="(512) 000-0000">
+            </div>
+            <div class="hire-field-group">
+              <label class="hire-label">Email Address <span class="text-blue-400">*</span></label>
+              <input type="email" name="email" required class="hire-input" placeholder="you@example.com">
+            </div>
+          </div>
+          <div class="hire-field-group">
+            <label class="hire-label">Secondary Phone Number</label>
+            <input type="tel" name="secondary_phone" class="hire-input" placeholder="(512) 000-0000">
+          </div>
+        </div>
+
+        <!-- ══ REFERENCES ══ -->
+        <div class="hire-section-header">References</div>
+        <div class="hire-section-body">
+          <p class="text-xs text-gray-500 mb-3">Reference 1 (Required)</p>
+          <div class="hire-grid-3">
+            <div class="hire-field-group">
+              <label class="hire-label">Name <span class="text-blue-400">*</span></label>
+              <input type="text" name="ref1_name" required class="hire-input" placeholder="Jane Smith">
+            </div>
+            <div class="hire-field-group">
+              <label class="hire-label">Email <span class="text-blue-400">*</span></label>
+              <input type="email" name="ref1_email" required class="hire-input" placeholder="jane@example.com">
+            </div>
+            <div class="hire-field-group">
+              <label class="hire-label">Phone Number</label>
+              <input type="tel" name="ref1_phone" class="hire-input" placeholder="(512) 000-0000">
+            </div>
+          </div>
+          <p class="text-xs text-gray-500 mb-3 mt-4">Reference 2 (Optional)</p>
+          <div class="hire-grid-3">
+            <div class="hire-field-group">
+              <label class="hire-label">Name</label>
+              <input type="text" name="ref2_name" class="hire-input" placeholder="Bob Jones">
+            </div>
+            <div class="hire-field-group">
+              <label class="hire-label">Email</label>
+              <input type="email" name="ref2_email" class="hire-input" placeholder="bob@example.com">
+            </div>
+            <div class="hire-field-group">
+              <label class="hire-label">Phone Number</label>
+              <input type="tel" name="ref2_phone" class="hire-input" placeholder="(512) 000-0000">
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ DESIRED EMPLOYMENT ══ -->
+        <div class="hire-section-header">Desired Employment</div>
+        <div class="hire-section-body">
+          <div class="hire-grid-2" style="align-items:start;">
+            <!-- Employment type -->
+            <div class="hire-field-group">
+              <label class="hire-label">Employment Type <span class="text-blue-400">*</span></label>
+              <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px;">
+                <label class="hire-checkbox-label"><input type="checkbox" name="emp_type" value="Full Time"> Full Time</label>
+                <label class="hire-checkbox-label"><input type="checkbox" name="emp_type" value="Part Time"> Part Time</label>
+              </div>
+              <label class="hire-label" style="margin-top:8px;">Preferred Days</label>
+              <div class="hire-days-row">
+                <label class="hire-day-label"><input type="checkbox" name="pref_days" value="Sun">Sun</label>
+                <label class="hire-day-label"><input type="checkbox" name="pref_days" value="Mon">Mon</label>
+                <label class="hire-day-label"><input type="checkbox" name="pref_days" value="Tue">Tue</label>
+                <label class="hire-day-label"><input type="checkbox" name="pref_days" value="Wed">Wed</label>
+                <label class="hire-day-label"><input type="checkbox" name="pref_days" value="Thu">Thu</label>
+                <label class="hire-day-label"><input type="checkbox" name="pref_days" value="Fri">Fri</label>
+                <label class="hire-day-label"><input type="checkbox" name="pref_days" value="Sat">Sat</label>
+              </div>
+            </div>
+            <!-- Position & salary -->
+            <div>
+              <div class="hire-field-group">
+                <label class="hire-label">Position Applying For <span class="text-blue-400">*</span></label>
+                <div style="display:flex;flex-direction:column;gap:8px;">
+                  <label class="hire-checkbox-label"><input type="checkbox" name="position" value="Consent Tows"> Consent Tows</label>
+                  <label class="hire-checkbox-label"><input type="checkbox" name="position" value="Private Property Impounds (PPI)"> Private Property Impounds (PPI)</label>
+                  <label class="hire-checkbox-label"><input type="checkbox" name="position" value="Incident Manager (IM)"> Incident Manager (IM)</label>
+                  <label class="hire-checkbox-label"><input type="checkbox" name="position" value="None of the above"> None of the above</label>
+                </div>
+              </div>
+              <div class="hire-grid-2" style="margin-top:12px;">
+                <div class="hire-field-group">
+                  <label class="hire-label">Desired Salary</label>
+                  <input type="text" name="desired_salary" class="hire-input" placeholder="$XX / hr">
+                </div>
+                <div class="hire-field-group">
+                  <label class="hire-label">Date Available <span class="text-blue-400">*</span></label>
+                  <input type="date" name="start_date" required class="hire-input">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ TRUCK EXPERIENCE ══ -->
+        <div class="hire-section-header">Truck Experience (if any)</div>
+        <div class="hire-section-body">
+          <p class="text-xs text-gray-500 mb-10px;">List up to 4 trucks you have experience operating.</p>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px;">
+            <!-- Row 1 -->
+            <div class="hire-truck-row">
+              <div class="hire-field-group" style="margin:0">
+                <label class="hire-label">Truck / Equipment</label>
+                <input type="text" name="truck1_name" class="hire-input" placeholder="e.g. Flatbed">
+              </div>
+              <div class="hire-field-group" style="margin:0">
+                <label class="hire-label">Location / Company</label>
+                <input type="text" name="truck1_location" class="hire-input" placeholder="Austin, TX">
+              </div>
+              <div class="hire-field-group" style="margin:0">
+                <label class="hire-label">Years of Experience</label>
+                <input type="number" name="truck1_years" min="0" max="50" class="hire-input" placeholder="0">
+              </div>
+              <div class="hire-field-group" style="margin:0;text-align:center;">
+                <label class="hire-label">Preferred</label>
+                <label class="hire-checkbox-label" style="justify-content:center;"><input type="checkbox" name="truck1_preferred" value="yes"></label>
+              </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="hire-truck-row">
+              <div class="hire-field-group" style="margin:0">
+                <label class="hire-label">Truck / Equipment</label>
+                <input type="text" name="truck2_name" class="hire-input" placeholder="e.g. Wrecker">
+              </div>
+              <div class="hire-field-group" style="margin:0">
+                <label class="hire-label">Location / Company</label>
+                <input type="text" name="truck2_location" class="hire-input" placeholder="">
+              </div>
+              <div class="hire-field-group" style="margin:0">
+                <label class="hire-label">Years of Experience</label>
+                <input type="number" name="truck2_years" min="0" max="50" class="hire-input" placeholder="0">
+              </div>
+              <div class="hire-field-group" style="margin:0;text-align:center;">
+                <label class="hire-label">Preferred</label>
+                <label class="hire-checkbox-label" style="justify-content:center;"><input type="checkbox" name="truck2_preferred" value="yes"></label>
+              </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="hire-truck-row">
+              <div class="hire-field-group" style="margin:0">
+                <label class="hire-label">Truck / Equipment</label>
+                <input type="text" name="truck3_name" class="hire-input" placeholder="">
+              </div>
+              <div class="hire-field-group" style="margin:0">
+                <label class="hire-label">Location / Company</label>
+                <input type="text" name="truck3_location" class="hire-input" placeholder="">
+              </div>
+              <div class="hire-field-group" style="margin:0">
+                <label class="hire-label">Years of Experience</label>
+                <input type="number" name="truck3_years" min="0" max="50" class="hire-input" placeholder="0">
+              </div>
+              <div class="hire-field-group" style="margin:0;text-align:center;">
+                <label class="hire-label">Preferred</label>
+                <label class="hire-checkbox-label" style="justify-content:center;"><input type="checkbox" name="truck3_preferred" value="yes"></label>
+              </div>
+            </div>
+            <!-- Row 4 -->
+            <div class="hire-truck-row">
+              <div class="hire-field-group" style="margin:0">
+                <label class="hire-label">Truck / Equipment</label>
+                <input type="text" name="truck4_name" class="hire-input" placeholder="">
+              </div>
+              <div class="hire-field-group" style="margin:0">
+                <label class="hire-label">Location / Company</label>
+                <input type="text" name="truck4_location" class="hire-input" placeholder="">
+              </div>
+              <div class="hire-field-group" style="margin:0">
+                <label class="hire-label">Years of Experience</label>
+                <input type="number" name="truck4_years" min="0" max="50" class="hire-input" placeholder="0">
+              </div>
+              <div class="hire-field-group" style="margin:0;text-align:center;">
+                <label class="hire-label">Preferred</label>
+                <label class="hire-checkbox-label" style="justify-content:center;"><input type="checkbox" name="truck4_preferred" value="yes"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ SKILLS ══ -->
+        <div class="hire-section-header">Skills</div>
+        <div class="hire-section-body">
+          <div class="hire-grid-2">
+            <div class="hire-field-group">
+              <label class="hire-label">Skill 1</label>
+              <input type="text" name="skill_1" class="hire-input" placeholder="e.g. Vehicle Recovery">
+            </div>
+            <div class="hire-field-group">
+              <label class="hire-label">Skill 3</label>
+              <input type="text" name="skill_3" class="hire-input" placeholder="">
+            </div>
+            <div class="hire-field-group">
+              <label class="hire-label">Skill 2</label>
+              <input type="text" name="skill_2" class="hire-input" placeholder="">
+            </div>
+            <div class="hire-field-group">
+              <label class="hire-label">Skill 4</label>
+              <input type="text" name="skill_4" class="hire-input" placeholder="">
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ WORK EXPERIENCE ══ -->
+        <div class="hire-section-header">Work Experience</div>
+        <div class="hire-section-body">
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div class="hire-grid-2" style="grid-template-columns:1.5fr 1fr 1fr 1fr;">
+              <label class="hire-label" style="align-self:end;padding-bottom:4px;">Company Name</label>
+              <label class="hire-label" style="align-self:end;padding-bottom:4px;">Position</label>
+              <label class="hire-label" style="align-self:end;padding-bottom:4px;">Employer / Supervisor</label>
+              <label class="hire-label" style="align-self:end;padding-bottom:4px;">Start – End Year</label>
+            </div>
+            <!-- 4 work rows -->
+            <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:10px;">
+              <input type="text" name="work1_company" class="hire-input" placeholder="Company">
+              <input type="text" name="work1_position" class="hire-input" placeholder="Position">
+              <input type="text" name="work1_employer" class="hire-input" placeholder="Supervisor">
+              <input type="text" name="work1_dates" class="hire-input" placeholder="2020-2022">
+            </div>
+            <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:10px;">
+              <input type="text" name="work2_company" class="hire-input" placeholder="Company">
+              <input type="text" name="work2_position" class="hire-input" placeholder="Position">
+              <input type="text" name="work2_employer" class="hire-input" placeholder="Supervisor">
+              <input type="text" name="work2_dates" class="hire-input" placeholder="2022-2024">
+            </div>
+            <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:10px;">
+              <input type="text" name="work3_company" class="hire-input" placeholder="Company">
+              <input type="text" name="work3_position" class="hire-input" placeholder="Position">
+              <input type="text" name="work3_employer" class="hire-input" placeholder="Supervisor">
+              <input type="text" name="work3_dates" class="hire-input" placeholder="2020-2022">
+            </div>
+            <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:10px;">
+              <input type="text" name="work4_company" class="hire-input" placeholder="Company">
+              <input type="text" name="work4_position" class="hire-input" placeholder="Position">
+              <input type="text" name="work4_employer" class="hire-input" placeholder="Supervisor">
+              <input type="text" name="work4_dates" class="hire-input" placeholder="2020-2022">
+            </div>
+          </div>
+          <p class="text-xs text-gray-600 mt-4">Columns stack vertically on mobile screens.</p>
+        </div>
+
+        <!-- ══ GENERAL / CONFIRMATION ══ -->
+        <div class="hire-section-header">General / Confirmation</div>
+        <div class="hire-section-body">
+          <div class="hire-field-group">
+            <label class="hire-label">How familiar are you with tools? <span class="text-blue-400">*</span></label>
+            <select name="tool_familiarity" required class="hire-input">
+              <option value="" disabled selected>Select one…</option>
+              <option value="Not familiar at all">Not familiar at all</option>
+              <option value="Somewhat familiar">Somewhat familiar</option>
+              <option value="Moderately familiar">Moderately familiar</option>
+              <option value="Very familiar">Very familiar</option>
+              <option value="Expert level">Expert level</option>
+            </select>
+          </div>
+          <div class="hire-field-group">
+            <label class="hire-label">How well do you respond to hard labor? <span class="text-blue-400">*</span></label>
+            <select name="hard_labor_response" required class="hire-input">
+              <option value="" disabled selected>Select one…</option>
+              <option value="Poorly — I prefer light duty">Poorly — I prefer light duty</option>
+              <option value="Adequately">Adequately</option>
+              <option value="Well">Well</option>
+              <option value="Very well — I thrive under physical work">Very well — I thrive under physical work</option>
+            </select>
+          </div>
+
+          <!-- Digital Signature -->
+          <div class="hire-field-group" style="margin-top:20px;">
+            <label class="hire-label">Digital Signature <span class="text-blue-400">*</span></label>
+            <p class="text-xs text-gray-500 mb-2">Sign below using your mouse or finger. By signing you confirm all information provided is truthful and accurate.</p>
+            <canvas id="sig-canvas" width="800" height="160"></canvas>
+            <div class="sig-toolbar">
+              <button type="button" class="sig-btn" id="sig-clear-btn">✕ Clear</button>
+              <span id="sig-status" class="text-xs text-gray-500" style="align-self:center;margin-left:4px;">Please sign above</span>
+            </div>
+          </div>
+
+          <!-- Confirmation checkbox -->
+          <div class="hire-field-group" style="margin-top:20px;padding:16px;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.2);border-radius:10px;">
+            <label class="hire-checkbox-label">
+              <input type="checkbox" name="accuracy_confirmed" value="yes" required>
+              <span>By checking this box I confirm that all information provided in this application is true and accurate to the best of my knowledge. I understand that false statements may be grounds for rejection or dismissal.</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ══ RESUME UPLOAD ══ -->
+        <div class="hire-section-header" style="margin-top:28px;">Upload Resume (Optional)</div>
+        <div class="hire-section-body">
+          <div class="hire-file-area" id="file-drop-area">
+            <input type="file" name="resume" accept=".pdf,.docx" id="resume-input">
+            <svg class="w-10 h-10 mx-auto mb-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+            </svg>
+            <p class="text-white font-semibold mb-1">Click or drag &amp; drop your resume</p>
+            <p class="text-xs text-gray-500">Accepts .PDF and .DOCX — max 10MB</p>
+            <p id="file-name-display" class="text-blue-400 text-sm mt-2 hidden"></p>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div style="margin-top:28px;">
+          <button type="submit" class="hire-submit-btn">Submit Application →</button>
+        </div>
+
+        <!-- Success / error messages -->
+        <div id="hire-success" class="hidden mt-6 bg-green-500/20 border border-green-500/30 rounded-xl p-5 text-center">
+          <p class="text-green-400 font-semibold text-lg">✓ Application submitted! We'll be in touch soon.</p>
+        </div>
+        <div id="hire-error" class="hidden mt-6 bg-red-500/20 border border-red-500/30 rounded-xl p-5 text-center">
+          <p class="text-red-400">Submission failed. Please try again or call us directly.</p>
+        </div>
+
+      </form><!-- /hiring-form -->
+     </div>
+    </section>
+
+    <script>
+    // ── Signature Canvas — lazy init so it fires AFTER the page is visible ──
+    (function(){
+      let sigInitialized = false;
+
+      function initSignature() {
+        if (sigInitialized) return;
+        const canvas = document.getElementById('sig-canvas');
+        if (!canvas) return;
+        // Guard: only init once the canvas has real dimensions
+        const rect = canvas.getBoundingClientRect();
+        if (rect.width === 0) return;
+        sigInitialized = true;
+
+        const ctx = canvas.getContext('2d');
+        const status = document.getElementById('sig-status');
+        const dataInput = document.getElementById('sig-data-input');
+        let drawing = false;
+
+        function setupCtx() {
+          const ratio = window.devicePixelRatio || 1;
+          const r = canvas.getBoundingClientRect();
+          canvas.width  = Math.round(r.width  * ratio);
+          canvas.height = Math.round(r.height * ratio);
+          ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+          ctx.strokeStyle = '#60a5fa';
+          ctx.lineWidth   = 2.5;
+          ctx.lineCap     = 'round';
+          ctx.lineJoin    = 'round';
+        }
+        setupCtx();
+
+        function getPos(e) {
+          const r = canvas.getBoundingClientRect();
+          const src = e.touches ? e.touches[0] : e;
+          return { x: src.clientX - r.left, y: src.clientY - r.top };
+        }
+
+        function startDraw(e) {
+          drawing = true;
+          const p = getPos(e);
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+        }
+        function moveDraw(e) {
+          if (!drawing) return;
+          const p = getPos(e);
+          ctx.lineTo(p.x, p.y);
+          ctx.stroke();
+          canvas.classList.add('signed');
+          status.textContent = 'Signature captured ✓';
+          status.style.color = '#4ade80';
+          dataInput.value = canvas.toDataURL();
+        }
+        function endDraw() { drawing = false; }
+
+        canvas.addEventListener('mousedown',  startDraw);
+        canvas.addEventListener('mousemove',  moveDraw);
+        canvas.addEventListener('mouseup',    endDraw);
+        canvas.addEventListener('mouseleave', endDraw);
+
+        canvas.addEventListener('touchstart', e => { e.preventDefault(); startDraw(e); }, { passive: false });
+        canvas.addEventListener('touchmove',  e => { e.preventDefault(); moveDraw(e);  }, { passive: false });
+        canvas.addEventListener('touchend',   endDraw);
+
+        document.getElementById('sig-clear-btn').addEventListener('click', function(){
+          const ratio = window.devicePixelRatio || 1;
+          ctx.clearRect(0, 0, canvas.width / ratio, canvas.height / ratio);
+          canvas.classList.remove('signed');
+          status.textContent = 'Please sign above';
+          status.style.color = '';
+          dataInput.value = '';
+        });
+
+        window.addEventListener('resize', function(){
+          // Re-setup on resize (clears canvas — acceptable)
+          setupCtx();
+          dataInput.value = '';
+          canvas.classList.remove('signed');
+          status.textContent = 'Please sign above';
+          status.style.color = '';
+        });
+      }
+
+      // Hook into showPage so we init the moment Hiring becomes visible
+      const _orig = window.showPage;
+      window.showPage = function(name) {
+        _orig(name);
+        if (name === 'hiring') {
+          // Use rAF to ensure the DOM has painted and the canvas has real dimensions
+          requestAnimationFrame(function(){
+            requestAnimationFrame(initSignature);
+          });
+        }
+      };
+
+      // Also try on DOMContentLoaded in case the page loads directly on hiring
+      document.addEventListener('DOMContentLoaded', function(){
+        if (!document.getElementById('page-hiring').classList.contains('hidden')) {
+          requestAnimationFrame(function(){ requestAnimationFrame(initSignature); });
+        }
+      });
+    })();
+
+    // ── File upload display ──
+    document.getElementById('resume-input').addEventListener('change', function(){
+      const display = document.getElementById('file-name-display');
+      if (this.files && this.files[0]) {
+        display.textContent = '📎 ' + this.files[0].name;
+        display.classList.remove('hidden');
+      } else { display.classList.add('hidden'); }
+    });
+
+    // ── Work experience grid responsive ──
+    (function(){
+      const isMobile = () => window.innerWidth < 640;
+      function fixWorkRows(){
+        document.querySelectorAll('#hiring-form [style*="grid-template-columns:1.5fr"]').forEach(el=>{
+          if(isMobile()) el.style.gridTemplateColumns='1fr';
+          else el.style.gridTemplateColumns='1.5fr 1fr 1fr 1fr';
+        });
+      }
+      fixWorkRows();
+      window.addEventListener('resize', fixWorkRows);
+    })();
+
+    // ── Hiring form submission ──
+    document.getElementById('hiring-form').addEventListener('submit', function(e){
+      e.preventDefault();
+
+      // Fix 4: Confirm checkbox must be checked
+      const confirmBox = this.querySelector('input[name="accuracy_confirmed"]');
+      if (!confirmBox.checked) {
+        confirmBox.closest('.hire-field-group').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        confirmBox.closest('.hire-field-group').style.outline = '2px solid #f87171';
+        confirmBox.closest('.hire-field-group').style.borderRadius = '10px';
+        setTimeout(()=>{ confirmBox.closest('.hire-field-group').style.outline = ''; }, 3000);
+        alert('Please check the confirmation box before submitting.');
+        return;
+      }
+
+      // Signature required
+      const sigData = document.getElementById('sig-data-input').value;
+      if (!sigData) {
+        document.getElementById('sig-canvas').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        alert('Please provide your digital signature before submitting.');
+        return;
+      }
+
+      const btn = this.querySelector('.hire-submit-btn');
+      btn.textContent = 'Submitting…';
+      btn.disabled = true;
+      const formData = new FormData(this);
+      fetch('https://formspree.io/f/xaqlqngo', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(r => {
+        if (r.ok) {
+          document.getElementById('hire-success').classList.remove('hidden');
+          document.getElementById('hire-error').classList.add('hidden');
+          document.getElementById('hire-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          this.reset();
+          document.getElementById('sig-clear-btn').click();
+          document.getElementById('file-name-display').classList.add('hidden');
+          btn.textContent = 'Submit Application →';
+          btn.disabled = false;
+        } else {
+          document.getElementById('hire-error').classList.remove('hidden');
+          btn.textContent = 'Submit Application →';
+          btn.disabled = false;
+        }
+      }).catch(() => {
+        document.getElementById('hire-error').classList.remove('hidden');
+        btn.textContent = 'Submit Application →';
+        btn.disabled = false;
+      });
+    });
+    </script>
    </div><!-- CONTACT PAGE -->
    <div id="page-contact" class="page hidden">
     <section class="pt-28 pb-20 min-h-screen bg-gradient-to-b from-black to-gray-900">
@@ -979,7 +1695,7 @@
            <p class="text-gray-400 text-sm">Location</p>
            <p id="contact-address" class="font-bebas text-xl">11815 Buckner Rd, Austin TX 78726</p>
           </div>
-          </a><!-- Email --> <a href="mailto:towtimellc&#64;outlook.com" class="flex items-center gap-6 bg-white/5 border border-white/10 rounded-2xl p-6 card-hover">
+          </a><!-- Email --> <a href="/cdn-cgi/l/email-protection#0e7a61797a67636b62626d282d383a35617b7a62616165206d6163" class="flex items-center gap-6 bg-white/5 border border-white/10 rounded-2xl p-6 card-hover">
           <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center flex-shrink-0">
            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -1042,7 +1758,7 @@
     </div>
    </footer>
   </div>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Default configuration
     const defaultConfig = {
       company_name: 'TOW TIME LLC',
@@ -1187,4 +1903,4 @@
       });
     }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c1bc22b1477e76a',t:'MTc2OTA1MDM4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none'
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c1bc22b1477e76a',t:'MTc2OTA1MDM4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}
